@@ -1,5 +1,7 @@
 # Ensō Evaluation
 
+[![DOI](https://zenodo.org/badge/631047761.svg)](https://zenodo.org/badge/latestdoi/631047761)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/crossroadsfpga/enso/osdi23ae/docs/assets/enso-white.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/crossroadsfpga/enso/osdi23ae/docs/assets/enso-black.svg">

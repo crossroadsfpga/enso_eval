@@ -1,0 +1,31 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+fail_fast: false
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.3.0
+  hooks:
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: check-yaml
+  - id: check-toml
+  - id: check-added-large-files
+    args: ['--maxkb=10000']
+- repo: https://gitlab.com/daverona/pre-commit-cpp
+  rev: 0.8.0          # use the most recent version
+  hooks:
+  - id: clang-format  # formatter of C/C++ code based on a style guide: LLVM, Google, Chromium, Mozilla, and WebKit available
+    args: ["-style=Google"]
+  - id: cpplint       # linter (or style-error checker) for Google C++ Style Guide
+  - id: cppcheck      # static analyzer of C/C++ code
+- repo: https://github.com/charliermarsh/ruff-pre-commit
+  rev: 'v0.0.255'  # Ruff version.
+  hooks:
+    - id: ruff
+      args: [--fix, --exit-non-zero-on-fix]
+- repo: https://github.com/psf/black
+  rev: 22.10.0
+  hooks:
+  - id: black
+    args: ["--line-length", "79"]

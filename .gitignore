@@ -1,0 +1,9 @@
+bps*.txt
+pps*.txt
+*.csv
+*.pdf
+*.pyc
+build
+*.log
+.vscode/
+experiment_config.toml

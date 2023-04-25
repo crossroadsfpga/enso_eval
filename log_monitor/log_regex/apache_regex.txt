@@ -1,0 +1,24 @@
+0:/\[\]\s\[(:?error|\S+:\S+)\]( \[pid \d+(:\S+ \d+)?\])? \[client \S+(:\d{1,5})?\] (?:(?:AH001[23][456]: )?Invalid (method|URI) in request\b|(?:AH00565: )?request failed: URI too long \(longer than \d+\)|request failed: erroneous characters after protocol string:|(?:AH00566: )?request failed: invalid characters in URI\b)/
+1:/(?:does not exist|not found or unable to stat): /\S*(?:php(?:[45]|[.-]cgi)?|\.asp|\.exe|\.pl|\bcgi-bin/)\b/
+2:/'/\S*(?:php(?:[45]|[.-]cgi)?|\.asp|\.exe|\.pl|\bcgi-bin/)\S*' not found or unable to stat/
+3:/error '[Pp]rimary script unknown(?:\\n)?'/
+4:/client (?:denied by server configuration|used wrong authentication scheme)\b/
+5:/user (?!`)(?:\S*|.*?) (?:auth(?:oriz|entic)ation failure|not found|denied by provider)\b/
+6:/Authorization of user (?:\S*|.*?) to access .*? failed\b/
+7:/([A-Z]\w+: )?user (?:\S*|.*?): password mismatch\b/
+8:/([A-Z]\w+: )?user `(?:[^']*|.*?)' in realm `.+' (auth(?:oriz|entic)ation failure|not found|denied by provider)\b/
+9:/([A-Z]\w+: )?invalid nonce .* received - length is not\b/
+10:/([A-Z]\w+: )?realm mismatch - got `(?:[^']*|.*?)' but expected\b/
+11:/([A-Z]\w+: )?unknown algorithm `(?:[^']*|.*?)' received\b/
+12:/invalid qop `(?:[^']*|.*?)' received\b/
+13:/([A-Z]\w+: )?invalid nonce .*? received - user attempted time travel\b/
+14:/(?:No h|H)ostname \S+ provided via SNI(?:, but no hostname provided| and hostname \S+ provided| for a name based virtual host)\b/
+15:/\[\]\s\[(:?error|\S+:\S+)\]( \[pid \d+(:\S+ \d+)?\])? \[client \S+(:\d{1,5})?\](?: \[client [^\]]+\])? ModSecurity:\s+(?:\[(?:\w+ \"[^\"]*\"|[^\]]*)\]\s*)*Access denied with code [45]\d\d/
+16:/\[\]\s\[(:?error|\S+:\S+)\]( \[pid \d+(:\S+ \d+)?\])? \[client \S+(:\d{1,5})?\] (AH00128: )?File does not exist: .*/~.*/
+17:/\S+ -.*"(GET|POST|HEAD).*HTTP.*"(?:Atomic_Email_Hunter/4\.0|atSpider/1\.0|autoemailspider|bwh3_user_agent|China Local Browse 2\.6|ContactBot/0\.2|ContentSmartz|DataCha0s/2\.0|DBrowse 1\.4b|DBrowse 1\.4d|Demo Bot DOT 16b|Demo Bot Z 16b|DSurf15a 01|DSurf15a 71|DSurf15a 81|DSurf15a VA|EBrowse 1\.4b|Educate Search VxB|EmailSiphon|EmailSpider|EmailWolf 1\.00|ESurf15a 15|ExtractorPro|Franklin Locator 1\.8|FSurf15a 01|Full Web Bot 0416B|Full Web Bot 0516B|Full Web Bot 2816B|Guestbook Auto Submitter|Industry Program 1\.0\.x|ISC Systems iRc Search 2\.1|IUPUI Research Bot v 1\.9a|LARBIN-EXPERIMENTAL \(efp@gmx\.net\)|LetsCrawl\.com/1\.0 \+http\://letscrawl\.com/|Lincoln State Web Browser|LMQueueBot/0\.2|LWP\:\:Simple/5\.803|Mac Finder 1\.0\.xx|MFC Foundation Class Library 4\.0|Microsoft URL Control - 6\.00\.8xxx|Missauga Locate 1\.0\.0|Missigua Locator 1\.9|Missouri College Browse|Mizzu Labs 2\.2|Mo College 1\.9|MVAClient|Mozilla/2\.0 \(compatible; NEWT ActiveX; Win32\)|Mozilla/3\.0 \(compatible; Indy Library\)|Mozilla/3\.0 \(compatible; scan4mail \(advanced version\) http\://www\.peterspages\.net/?scan4mail\)|Mozilla/4\.0 \(compatible; Advanced Email Extractor v2\.xx\)|Mozilla/4\.0 \(compatible; Iplexx Spider/1\.0 http\://www\.iplexx\.at\)|Mozilla/4\.0 \(compatible; MSIE 5\.0; Windows NT; DigExt; DTS Agent|Mozilla/4\.0 efp@gmx\.net|Mozilla/5\.0 \(Version\: xxxx Type\:xx\)|NameOfAgent \(CMS Spider\)|NASA Search 1\.0|Nsauditor/1\.x|PBrowse 1\.4b|PEval 1\.4b|Poirot|Port Huron Labs|Production Bot 0116B|Production Bot 2016B|Production Bot DOT 3016B|Program Shareware 1\.0\.2|PSurf15a 11|PSurf15a 51|PSurf15a VA|psycheclone|RSurf15a 41|RSurf15a 51|RSurf15a 81|searchbot admin@google\.com|ShablastBot 1\.0|snap\.com beta crawler v0|Snapbot/1\.0|Snapbot/1\.0 \(Snap Shots&#44; \+http\://www\.snap\.com\)|sogou develop spider|Sogou Orion spider/3\.0\(\+http\://www\.sogou\.com/docs/help/webmasters\.htm#07\)|sogou spider|Sogou web spider/3\.0\(\+http\://www\.sogou\.com/docs/help/webmasters\.htm#07\)|sohu agent|SSurf15a 11 |TSurf15a 11|Under the Rainbow 2\.2|User-Agent\: Mozilla/4\.0 \(compatible; MSIE 6\.0; Windows NT 5\.1\)|VadixBot|WebVulnCrawl\.unknown/1\.0 libwww-perl/5\.803|Wells Search II|WEP Search 00|EmailCollector|WebEMailExtrac|TrackBack/1\.02|sogou music spider|(?:Mozilla/\d+\.\d+ )?Jorgee)"/
+18:/\s*\S+ \S+ \S+(?: \S+)?\s+\S+ "[A-Z]+ /\S* [^"]*" \d+ \d+ \"[^"]*\" "[^"]*\bGooglebot/[^"]*"/
+19:/(?:File does not exist|script not found or unable to stat): /var/www/<block>(, referer: \S+)?\s*/
+20:/script '/var/www/<block>' not found or unable to stat(, referer: \S+)?\s*/
+21:/\S+ - \w+ \[\] "GET <knocking_url> HTTP/1\.[01]" 200 \d+ ".*" "[^-].*"/
+22:/warning: HTTP_[^:]+: ignoring function definition attempt(, referer: \S+)?\s*/
+23:/error importing function definition for `HTTP_[^']+'(, referer: \S+)?\s*/

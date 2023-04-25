@@ -1,0 +1,5 @@
+0:/\s*\[error\] \d+#\d+: \*\d+ user "(?:[^"]+|.*?)":? (?:password mismatch|was not found in "[^\"]*"), client: \S+, server: \S*, request: "\S+ \S+ HTTP/\d+\.\d+", host: "\S+"(?:, referrer: "\S+")?\s*/
+1:/\S+ - \S+ \[\] "[^"]*" 400/
+2:/\s*\[[a-z]+\] \d+#\d+: \*\d+ limiting requests, excess: [\d\.]+ by zone "(?:[^"]+)", client: \S+,/
+3:/\S+ \- \S+ \[\] \"(GET|POST|HEAD) \/<block> \S+\" 404 .+/
+4:/ \[error\] \d+#\d+: \*\d+ (\S+ )?\"\S+\" (failed|is not found) \(2\: No such file or directory\), client\: \S+\, server\: \S*\, request: \"(GET|POST|HEAD) \/<block> \S+\"\, .*?/

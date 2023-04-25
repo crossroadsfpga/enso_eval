@@ -1,0 +1,1 @@
+0:/type=USER_(ERR|AUTH) msg=audit\(:\d+\): (?:user )?pid=\d+ uid=0 auid=\d+ ses=\d+ subj=(?:unconfined_u|system_u):system_r:sshd_t:s0-s0:c0\.c1023 msg='(?:(?!acct=|exe=|addr=|terminal=|res=)\w+=(?:"[^"]+"|\S*) )*acct=(?:"[^"]+"|\S+) exe="/usr/sbin/sshd" (?:(?!acct=|exe=|addr=|terminal=|res=)\w+=(?:"[^"]+"|\S*) )*addr=\S+ terminal=ssh res=failed'(?:\x1D|$)/

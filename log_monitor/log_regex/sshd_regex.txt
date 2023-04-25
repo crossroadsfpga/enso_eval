@@ -1,0 +1,22 @@
+0:/[aA]uthentication (?:failure|error|failed) for .* from \S+( via \S+)?(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+1:/User not known to the underlying authentication module for .* from \S+(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+2:/Failed publickey for invalid user (?P<cond_user>\S+)|(?:(?! from ).)*? from \S+(?: (?:port \d+|on \S+)){0,2}(?: ssh\d*)?(?(cond_user): |(?:(?:(?! from ).)*)$)/
+3:/Failed (?:publickey|\S+) for (?P<cond_inv>invalid user )?(?P<cond_user>\S+)|(?(cond_inv)(?:(?! from ).)*?|[^:]+) from \S+(?: (?:port \d+|on \S+)){0,2}(?: ssh\d*)?(?(cond_user): |(?:(?:(?! from ).)*)$)/
+4:/ROOT LOGIN REFUSED FROM \S+/
+5:/[iI](?:llegal|nvalid) user .*? from \S+(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+6:/User \S+|.*? from \S+ not allowed because not listed in AllowUsers(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+7:/User \S+|.*? from \S+ not allowed because listed in DenyUsers(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+8:/User \S+|.*? from \S+ not allowed because not in any group(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+9:/refused connect from \S+ \(\S+\)/
+10:/Received disconnect from \S+(?: (?:port \d+|on \S+)){0,2}:\s*3: .*: Auth fail(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+11:/User \S+|.*? from \S+ not allowed because a group is listed in DenyGroups(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+12:/User \S+|.*? from \S+ not allowed because none of user's groups are listed in AllowGroups(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+13:/pam_unix\(sshd:auth\):\s+authentication failure;(?:\s+(?:(?:logname|e?uid|tty)=\S*)){0,4}\s+ruser=\S*\s+rhost=\S+(?:\s+user=\S*)?(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+14:/maximum authentication attempts exceeded for .* from \S+(?: (?:port \d+|on \S+)){0,2}(?: ssh\d*)?(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+15:/User \S+|.*? not allowed because account is locked(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+16:/Disconnecting(?: from)?(?: (?:invalid|authenticating)) user \S+ \S+(?: (?:port \d+|on \S+)){0,2}:\s*Change of username or service not allowed:\s*.*\[preauth\]\s*/
+17:/Disconnecting: Too many authentication failures(?: for \S+|.*?)?(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*/
+18:/Received disconnect from \S+(?: (?:port \d+|on \S+)){0,2}:\s*11:/
+19:/(Connection (?:closed|reset)|Disconnected) (?:by|from)(?: (?:invalid|authenticating) user \S+|.*?)? \S+(?:(?: (?:port \d+|on \S+|\[preauth\])){0,3}\s*|\s*)/
+20:/Accepted \w+ for \S+ from \S+(?:\s|$)/
+21:/Connection from \S+/

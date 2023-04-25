@@ -1,0 +1,3 @@
+[submodule "enso"]
+	path = enso
+	url = https://github.com/crossroadsfpga/enso.git

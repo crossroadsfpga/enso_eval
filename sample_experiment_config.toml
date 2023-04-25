@@ -1,0 +1,83 @@
+# Set the hostnames of the machines you want to use. These must match entries in
+# your ssh config file. You should also ensure that these entries are configured
+# to use an IdentityFile pointing to an ssh key without password. Note that SSH
+# Agent is not supported.
+#
+# Example of an .ssh/config file entry defining the host named `host_a`:
+#
+# Host host_a
+#    HostName host1.example.com
+#    User user
+#    IdentityFile ~/.ssh/id_rsa
+#
+[hosts]
+dut = ""
+pktgen = ""
+
+
+# Set the paths where to copy enso_eval on both the DUT and the pktgen machines.
+# Ensure that the user you are using to ssh into the machines has write access
+# to these directories. This user is set in the .ssh/config file (see above).
+[paths]
+dut_path = ""
+pktgen_path = ""
+
+
+[devices]
+# DUT.
+
+# Enso NIC PCIe address on the DUT machine. To list the PCIe addresses of the
+# available Enso NICs you may run the `enso/scripts/list_enso_nics.sh` script on
+# the DUT machine.
+enso_dut_pcie = ""
+
+# E810 NIC PCIe address on the DUT machine. You may use `lspci | grep Eth` to
+# list all the Ethernet PCIe devices in a given host.
+dpdk_dut_pcie = ""
+
+# FPGA ID of the Enso NIC on the DUT machine. This is used to identify the USB
+# device that is connected to the FPGA and will be used to load the bitstream
+# and contact it using JTAG. To list the FPGA IDs of the available Enso NICs you
+# may run the `enso/scripts/list_enso_nics.sh` script on the DUT machine.
+dut_fpga_id = ""  # FPGA ID of the FPGA NIC.
+
+
+# Pktgen.
+# We use EnsoGen to evaluate both Enso and DPDK but we can optionally use
+# different FPGA devices to run EnsoGen depending on whether we are evaluating
+# Enso or DPDK.
+
+# PCIe address of the Enso NIC to use with EnsoGen when evaluating __Enso__. To
+# list the PCIe addresses of the available Enso NICs you may run the
+# `enso/scripts/list_enso_nics.sh` script on the pktgen machine.
+enso_pktgen_pcie = ""
+
+# PCIe address of the Enso NIC to use with EnsoGen when evaluating __DPDK__. To
+# list the PCIe addresses of the available Enso NICs you may run the
+# `enso/scripts/list_enso_nics.sh` script on the pktgen machine.
+dpdk_pktgen_pcie = ""
+
+# FPGA ID of the Enso NIC to use with EnsoGen when evaluating __Enso__. To list
+# the FPGA IDs of the available Enso NICs you may run the
+# `enso/scripts/list_enso_nics.sh` script on the pktgen machine.
+enso_pktgen_fpga_id = ""
+
+# FPGA ID of the Enso NIC to use with EnsoGen when evaluating __DPDK__. To list
+# the FPGA IDs of the available Enso NICs you may run the
+# `enso/scripts/list_enso_nics.sh` script on the pktgen machine.
+dpdk_pktgen_fpga_id = ""
+
+
+[logs]
+# Log files. They will be saved in the client machine in the same directory
+# where you run the experiment.py script.
+dut_log = "dut.log"
+pktgen_log = "pktgen.log"
+
+
+[extra]
+dpdk_mem_channels = 4
+
+# Assuming Skylake. Change this if you are using a different CPU.
+nb_llc_ways = 11
+default_nb_ddio_ways = 2

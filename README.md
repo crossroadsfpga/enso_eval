@@ -135,7 +135,7 @@ To setup the DUT machine's Ensō NIC:
 
 After the commands finish running, you will be presented with a **JTAG console** for both FPGAs. You can leave the consoles open as we will use them to check NIC statistics later. You should open a new terminal window to run the next steps.
 
-Before moving on, check if the FPGAs are listed as PCIe devices. You can do so by running `enso/scripts/list_enso_nics.sh` on both machines. If an FPGA is listed as a USB device but not as a PCIe device, you should reboot the machine and run the above command again for the corresponding machine.[^2]
+Before moving on, check if the FPGAs are listed as PCIe devices. You can do so by running `enso/scripts/list_enso_nics.sh` on both machines. If an FPGA is listed as a USB device but not as a PCIe device, you should reboot the machine and run the above command again for the corresponding machine. The script will also give you a warning if you need to reboot.[^2]
 
 [^2]: Rebooting should only be required the first time you load the FPGA after the server has been *power cycled*. Note that this is not the same as rebooting the machine.
 

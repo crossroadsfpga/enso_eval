@@ -141,7 +141,7 @@ Before moving on, check if the FPGAs are listed as PCIe devices. You can do so b
 
 #### Running the echo server and EnsōGen
 
-Now that both FPGAs are loaded and configured, you should run the echo server. To do so, run the following commands:
+Now that both FPGAs are loaded and configured, you should run the echo server. To do so, run the following commands (starting at the **client** machine so that we can export the environment variables):
 
 ```bash
 # Ensure that you are at the enso_eval repo and that
@@ -161,7 +161,7 @@ This will run the echo server with one CPU core, two pipes and will not busy loo
 
 After the echo server is running, you can run EnsōGen to send packets. You may specify any pcap file as input to EnsōGen. For convenience, we provide some sample pcaps that you can use in `enso/scripts/sample_pcaps`. These pcaps are composed of packets with the destination IP and port that match the echo server's default bind.
 
-Start by sending 1000 packets:
+Start by sending 1000 packets (again starting at the **client** machine so that we can export the environment variables):
 
 ```bash
 # Ensure that you are at the enso_eval repo and that
@@ -229,7 +229,7 @@ Tabulated below is a brief summary of each claim, their associated figure name i
 
 ### Running the Experiments
 
-You may choose to run all the experiments or only a specific subset to satisfy a desired claim. In the table above, we list the set of experiments associated with each claim. For instance, to reproduce claim #2, you may run the following command:
+You may choose to run all the experiments or only a specific subset to satisfy a desired claim. In the table above, we list the set of experiments associated with each claim. For instance, to reproduce claim #2, you may run the following command (from the **client** machine):
 
 ```bash
 ./experiment.py ../data -f "Ensō RTT vs. load" \
@@ -246,7 +246,7 @@ The result of the experiments will be saved in the data directory that you speci
 
 Once `experiment.py` finishes running, you can produce the plot associated with a given claim using the `paper_plots.py` script. You can specify which plot to produce using the `--pick` option followed by the figure name. Refer to the claims table for the figure name associated with each claim.
 
-For instance, to produce the plot for claim #2, you may run the following command:
+For instance, to produce the plot for claim #2, you may run the following command (from the **client** machine):
 
 ```bash
 ./paper_plots.py ../data ../plots --pick rtt_vs_load_reactive_notif

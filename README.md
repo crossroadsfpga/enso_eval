@@ -8,7 +8,7 @@
   <img align="right" width="200" alt="Enso" src="./docs/assets/enso-black.svg">
 </picture>
 
-Ensō is a high-performance streaming interface for NIC-application communication. Here you will find the scripts and instructions to reproduce the main claims in the [OSDI '23](https://www.usenix.org/conference/osdi23) paper. We also include the applications modified to use Ensō that we use as part of the evaluation. Refer to the [Ensō repository](https://github.com/crossroadsfpga/enso/) for Ensō's source code and to the [Ensō documentation](https://crossroadsfpga.github.io/enso/) for more information on how to use Ensō for your own projects.
+Ensō is a high-performance streaming interface for NIC-application communication. Here you will find the scripts and instructions to reproduce the main claims in the [OSDI '23 paper](https://hsadok.com/papers/enso-osdi23.pdf). We also include the applications modified to use Ensō that we use as part of the evaluation. Refer to the [Ensō repository](https://github.com/crossroadsfpga/enso/) for Ensō's source code and to the [Ensō documentation](https://crossroadsfpga.github.io/enso/) for more information on how to use Ensō for your own projects.
 
 The instructions are split into two sections. The [first section](#getting-started-instructions) explains how to setup the environment and manually run an experiment using an echo server. The [second section](#detailed-instructions) explains how to automatically run experiments to verify the main claims in the paper.
 
